@@ -17,5 +17,8 @@ The example demonstrates a vulnerability that can lead to repudiation by malicio
 ## For you to do
 
 1. Briefly explain the vulnerability.
+- The operations and access of the server are not handled in a robust way. This means there is not repudiation.
 2. Briefly explain why the vulnerability is addressed in __secure.ts__.
+- This vulnerability is addressed by adding loggers for requests, responses, and errors. This lets us identify how the server is being accessed, easily identify suspicious activity, and ultimately better secure our server.
 3. Which design pattern is used in the secure version to address the vulnerability? Briefly explain how it works?
+- Middleware, chain of responsibility, is used to add logging to the request, response, and errors we catch. 

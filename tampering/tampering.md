@@ -25,5 +25,8 @@ This example demonstrates tampering through script injection.
 Answer the following:
 
 1. Briefly explain the potential vulnerabilities in **insecure.ts**
+ - the potential vulnerability is that the code does not sanitize the input when registering the user, thus letting arbitrary javascript be run on frontend
 2. Briefly explain how a malicious attacker can exploit them.
+ - a malicious attacker could insert a username containing a script which then modifies the page when it is displayed on the frontend
 3. Briefly explain why **secure.ts** does not have the same vulnerabilties?
+ - it does not have this issue since it sanitizes the username before creating the cookie. This means that the user is unable to insert scripts since they will be sanitized.

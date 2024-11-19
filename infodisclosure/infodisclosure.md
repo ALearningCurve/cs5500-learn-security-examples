@@ -31,5 +31,9 @@ This will create a database in MongoDB called __infodisclosure__. Verify its pre
 Answer the following:
 
 1. Briefly explain the potential vulnerabilities in **insecure.ts**
+- Untrusted input is being used in a database query, allowing arbitrary user controlled queries to be run
 2. Briefly explain how a malicious attacker can exploit them.
+- The user can give a custom mongoose query as the username param, such as {$ne: ''},
+which will then be run against the database and return an arbitrary user.
 3. Briefly explain the defensive techniques used in **secure.ts** to prevent the information disclosure vulnerability?
+- we do sanitization where we assert that the username is a string and remove non alphabetical characters. This means that the user can only query for valid usernames.
